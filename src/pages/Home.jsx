@@ -1,10 +1,12 @@
 import React from 'react'
 import HeroSection from '../components/HeroSection.jsx'
+import Footer from '../components/Footer.jsx'
 
 function Home() {
     return (
         <>
-            <div className=''><HeroSection /></div>
+            <HeroSection />
+            <Footer />
         </>
     )
 }
