@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import { MARK_API_END_POINT } from '../../url.js'
 import { FilePlus } from 'lucide-react'
+import { toast } from 'react-toastify'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
 function UpdateResult() {
+    const { id } = useParams()
     const formFiels = [
         {
             name: "Stduent Id",
@@ -49,7 +53,7 @@ function UpdateResult() {
         e.preventDefault()
         try {
             setLoading(true)
-            const res = await axios.post(`${MARK_API_END_POINT}/singleUpdateMarks`, input, {
+            const res = await axios.put(`${MARK_API_END_POINT}/singleUpdateMarks`, input, {
                 headers: {
                     "Content-Type": "application/json"
                 },
