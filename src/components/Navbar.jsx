@@ -1,4 +1,4 @@
-import { FileText, House, Key, SearchX, LogIn, User, UserCheck, LogOut, CircleUser, School, Trash2, FilePlus, FileSearch2 } from 'lucide-react'
+import { FileText, House, Key, SearchX, LogIn, User, UserCheck, LogOut, CircleUser, School, Trash2, FilePlus, FileSearch2, Eye } from 'lucide-react'
 import React, { useState } from 'react'
 import ModalBox from './ModalBox.jsx';
 import { Link, useNavigate } from 'react-router-dom';
@@ -245,13 +245,14 @@ function Navbar() {
             }
 
             {
-                adminModal && <ModalBox className='w-[500px] h-[400px]' onClose={() => setAdminModal(false)}>
+                adminModal && <ModalBox className='w-[500px] h-[500px]' onClose={() => setAdminModal(false)}>
                     <div className='m-8 flex'><img className='w-32 h-32 rounded-full ring-4 ring-orange-500' src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&h=1280&q=80" alt="profile" />
                         <div className='ml-5 mt-7 flex flex-col'><span className='text-5xl'>{admin?.schoolName}</span> <span className='mt-2 text-2xl'>Admin Account</span></div>
                     </div>
                     <div className=' mt-4'>
                         <Link to='/addResult'><div onClick={() => setAdminModal(false)} className='border rounded-lg px-4 py-2 m-2 hover:bg-gradient-to-t from-orange-50 to-orange-300 flex'><FilePlus size={28} /><span className='ml-3'>Add Result</span></div></Link>
-                        <Link to={`/listResult/${admin?._id}`}><div onClick={() => setAdminModal(false)} className='border flex rounded-lg px-4 py-2 m-2 hover:bg-gradient-to-t from-gray-50 to-gray-300'><LogOut size={28} /><span className='ml-3'>Update Marks</span></div></Link>
+                        <Link to={`/listResult/${admin?._id}`}><div onClick={() => setAdminModal(false)} className='flex border rounded-lg px-4 py-2 m-2 hover:bg-gradient-to-t from-orange-50 to-orange-300'><Eye size={28} /><span className='ml-3'>See Results</span></div></Link>
+                        <Link to={`/updateResult/${admin?._id}`}><div onClick={() => setAdminModal(false)} className='border flex rounded-lg px-4 py-2 m-2 hover:bg-gradient-to-t from-gray-50 to-gray-300'><LogOut size={28} /><span className='ml-3'>Update Marks</span></div></Link>
                         <Link to={`/listResult/${admin?._id}`}><div onClick={() => setAdminModal(false)} className='flex border rounded-lg px-4 py-2 m-2 hover:bg-gradient-to-t from-red-50 to-red-300'><Trash2 size={28} /><span className='ml-3'>Delete Marks</span></div></Link>
                     </div>
                 </ModalBox>

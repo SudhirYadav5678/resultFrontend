@@ -7,6 +7,7 @@ import Signup from './pages/school/Signup.jsx'
 import AddResult from './pages/school/AddResult.jsx'
 import Result from './pages/school/Result.jsx'
 import ListResult from './pages/school/ListResult.jsx'
+import UpdateResult from './pages/school/UpdateResult.jsx'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/addResult' element={<AddResult />} />
         <Route path='/result' element={<Result />} />
         <Route path='/listResult/:id' element={<ListResult />} />
+        <Route path='/updateResult/:id' element={<UpdateResult />} />
       </Route>
     )
   )

@@ -8,11 +8,11 @@ const resultSlice = createSlice({
 
     reducers: {
         setResult: (state, action) => {
-            state.result = [...state.result, action.payload];
+            state.result = action.payload;
         },
     }
 
 
 });
-export const { setLoading, setResults, setError } = resultSlice.actions;
+export const { setResult } = resultSlice.actions;
 export default resultSlice.reducer;
